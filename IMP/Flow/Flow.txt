@@ -1,0 +1,115 @@
+https://www.youtube.com/watch?v=kOpRhtbhftI&list=PLRKyZvuMYSIPJ84lXQSHMn8P-0J8jW5YT&index=1
+
+Flow and Channel
+--------------------------------------------
+
+Coroutine is use for impliment asy non blocking code
+- with the help of suspend fun
+suspend fun impliment using launch and Async 
+launch- fire and forgot -no result return
+Async - retun the result
+Suspend fun used in ---network call, databse call , single result retun
+
+when you want starem of data or continues data after some interval that time channel and flows are used
+steram of data used in - rediao FM, shar market,Gps tracking
+
+Channel-
+- Hot flows 
+-----------------
+- set--->receive
+-continues Producer provides the data whether the consumer is there or not
+- Ex- Theater movie star whether any person is there or not 
+	so when any person enter in theater before data is lost
+Flow -
+- Cold flow
+----------------------
+- emit---->collect
+- it will produce the data only when sny consume is avaialable 
+- bottleneck : flow handle bottleneck - means some time producer produce time fast but consumer speed is low to consume so bottleneck create or wise versa situaltion
+it will resolve using of cancle method
+- using Cancel() corounine flow will cancel
+- possible one flow(producer) has multiple consumer so in this scanario every cosumer is indipendant and data will provide indipendantly without lost 
+- no data lost
+- Ex netfix
+
+Methods:
+
+.onStart()- call start of flow
+.onCompletion() - call when flow completed
+.onEach()- call on each data get
+
+Operator
+first()
+toList()
+map()
+filter()
+buffer()
+
+Context Preservation(flowOn)-----------------------------
+
+- Flow Preser the context. Ex if the Consusmer run on main tread then producer automatically runs on main thread only
+Or in another words collect and emit run on same thread
+ 
+if you want to run on diffrent thread then you need to inform to flow using .flowOn
+
+Ex- .flowOn(Dispatcher.IO)
+code of line writen after the flowOn will run on main thread
+code of line writen before the flowOn will run on Dispatcher.IO
+
+- we can use multiple .flowOn with single collect
+
+
+Catch operator -------------------------------
+
+individualy handle the flow exception using .catch{} operator
+
+
+Shared Flow
+------------------------------------
+hot in nature
+EX: Movie theater
+
+-replay Operator
+it store the value as you mention and play start from there
+One Producer and multiple consumer that time late consumer data lost posisbility so in that case you save the previos data using replay operator
+
+val flowshared= MutableSharedFlow<Int>(2)
+
+val list=listof<Int>(1,2,3)
+
+fisrt consumer recived up to 3 by when second consumer enter it start to get recived from 2 
+early..list=1-1,2,3..
+late...list2=2,3,4 
+
+
+state Flow
+--------------------
+hot in nature
+it is same as shared flow diffrent only it Provide last stored value 
+everything is store like a box
+when second consumer join at that time it provide last value which is tore in box
+you can get the value of state flow using .value method
+
+Livedata vs shared flow
+
+Livedata is life cycle aware componets
+Livedata very less operators
+Livedata work only on main thread
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+MVVM---------------------------
+
+1. Model
+
+The Model is responsible for handling data. It can fetch data from:
+
+REST APIs
+Local databases (Room)
+Firebase
+Any other data source
+
+2. ViewModel
+
+The ViewModel contains the business logic. 
+It requests data from the repository and prepares it for the UI.
+Survives configuration changes (like screen rotation).
+Exposes data using LiveData, StateFlow, or Flow.
+Doesn't know about the Activity or Fragment.
+
+
+3. View
+
+The View displays data and observes the ViewModel.
+Handles UI interactions (button clicks, text input).
+Observes data from the ViewModel.
+Does not contain business logic.
+
+
+Benefits of MVVM---------------------------
+Separation of concerns.
+Easier to test business logic.
+Better code organization.
+Survives configuration changes.
+Works well with LiveData, StateFlow, and Jetpack Compose.
+

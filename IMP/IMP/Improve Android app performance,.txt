@@ -1,0 +1,35 @@
+-- improve Android app performance, I focus on reducing main-thread work using Coroutines,
+   Use Coroutines Instead of Blocking Calls
+
+--optimizing RecyclerView with DiffUtil and Paging, caching network responses,
+
+-- optimizing images using Glide/Coil,
+
+-- avoiding memory leaks with LeakCanary, 
+
+--improving database queries with Room,
+
+-- Use WorkManager for Background Tasks
+
+--reducing APK size using R8, 
+ 
+--monitoring CPU, memory, and startup performance using Android Profiler and Macrobenchmark. 
+
+--Follow Clean Architecture & DI
+
+
+Reduce the crash------------------------
+
+1. Monitor Crashes Using Firebase Crashlytics
+2. Handle Exceptions Properly -try-catch propry
+3. Prevent Null Pointer Exceptions
+4. Avoid Memory Leaks
+	Clear references when Activities or Fragments are destroyed.
+	Use Lifecycle-aware components.
+	Detect leaks using LeakCanary.
+5. Handle Network Failures Gracefully
+6. Write Unit and UI Tests
+8. Use ProGuard/R8 Carefully
+9. Fix ANRs (Application Not Responding)
+10. Perform Thorough Testing -in all version device
+11. Follow Clean Architecture & Code Reviews

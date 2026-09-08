@@ -1,0 +1,43 @@
+--Creational Design Patterns
+Singleton Pattern
+Factory Method Pattern
+Abstract Factory Pattern
+Builder Pattern
+Prototype Pattern
+Object Pool Pattern
+Lazy Initialization
+
+--Structural Design Patterns
+Adapter Pattern
+Decorator Pattern
+Facade Pattern
+Composite Pattern
+Proxy Pattern
+Bridge Pattern
+Flyweight Pattern
+
+--Behavioral Design Patterns
+Observer Pattern
+Strategy Pattern
+Command Pattern
+Chain of Responsibility Pattern
+Template Method Pattern
+Iterator Pattern
+State Pattern
+Mediator Pattern
+Memento Pattern
+Visitor Pattern
+
+--Advanced Design Pattern
+SOLID Principles
+DRY Principle
+KISS Principle
+YAGNI Principle
+Dependency Injection Pattern
+Composition Vs Inheritance
+Event-Driven Architecture
+CQRS Design Pattern
+Event Sourcing Patterns
+CQRS Vs Event Sourcing Patterns
+Repository Pattern
+MVC Design Pattern

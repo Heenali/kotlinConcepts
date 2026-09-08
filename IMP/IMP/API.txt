@@ -1,0 +1,26 @@
+Common HTTP Methods-----
+GET
+POST
+PUT-Update entire record
+PATCH-Update partial record
+DELETE
+@Path	Dynamic URL
+@Query	Query parameter
+@Body	Request body
+
+Parsing JSON-------------
+Retrofit commonly uses:
+Gson
+Moshi
+Kotlin Serialization
+
+Retrofit--------------
+API Interface-api method call get/post
+Retrofit Builder
+API Call-viewmodel
+Interceptor 
+
+Location Services--Google's Fused Location Provider
+map visualization---I use the Google Maps SDK
+place searching and autocomplete functionalit-- I use the Google Places API
+real-time tracking-I use continuous location updates with LocationRequest and LocationCallback

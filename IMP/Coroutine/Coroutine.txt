@@ -1,0 +1,108 @@
+https://www.youtube.com/watch?v=Mi5DEm45XlM&list=PLRKyZvuMYSIN-P6oJDEu3zGLl5UQNvx9y
+
+https://www.youtube.com/watch?v=lmRzRKIsn1ga
+
+
+there are limitation of thread creating in project but coroutine has no limiation of creation
+Coroutines  is very light weigh
+ted tread
+One thread has many Coroutines 
+
+main thread with looper-----
+when we request any that request goes to message que
+with help of looper every request line by line fech from message que and sent to thred
+some time when any request taking time to perform that time UI looks like hungging 
+so resolve this problem instade of every thing handle in main tread we use context swiching
+in java content swiching is very difficult but in kotling using coroutine this is very easy
+Content swiching means moving from one thred to another
+
+coroutine
+------------------------
+-this is not thread but it is working on top of thread
+
+impliment using
+1.coroutine scope 
+2.coroutine context
+--------------------------------------------
+1.coroutine scope - lifecycle
+
+Globalscope
+mainScope()
+coroutineScope()
+ViewModelScope()
+LifecycleScope()
+Superwiserscope()
+
+--------------------------------------------
+2.coroutine context- where to create on which thread
+
+Dispatcher
+using dispatcher you can define in which thread you can create coroutine
+
+Dispatcher.io
+Dispatcher.main
+Dispatcher.default
+
+
+Suspending fun
+-------------------------
+only suspend fun allow inside the coroutine
+a fun start ,pause and resume without blocking thread is called suspending fun
+
+------------------------------
+Coroutine Builders
+1.launch
+- fire and forgot
+- return job
+- using job handle the coroutine (wait,cancel)
+- .join() you can wait until return the result
+
+val s=corountineScope(Dispatcher.io).lanch{}
+
+s.join()
+
+2.Aync
+- return a result 
+- return defred result
+- .await() you can wait until return the result
+
+val s=corountineScope(Dispatcher.io).async{}
+s.await()
+
+--------------------------
+coroutine cancellation
+
+one coroutine has muliple child coroutine
+if parent coroutine cancel then child coroutine automatically got cancel
+using .cancel() corountine we can cancel
+in some scanarios like if the child task is long runing and you want to cancel the parent coroutine it will not work so for that sacanario you need to check 
+coroutine is active or not is active then only go inside the looper
+
+if(isActive)
+{
+	call long rining task
+}
+
+-----------------
+Coroutine WithContext & runBlocking
+
+WithContext
+- if you want to block the code handle using the suspend funs then WithContext is used
+- it block the thread and next fine run only once completed
+
+
+runBlocking
+-it block the thread untill programs end means whole code run
+
+-----------------------------
+ViewModelScope & LifecycleScope in Android Coroutines 
+
+coroutine scope will story once ViewModelScope/LifecycleScope will destory 
+both are interconnected
+
+
+heenalinew2020@gmail.com
+diya.lakhani2023@gmail.com
+heenalil.clarion@gmail.com
+heenaliclarion@gmail.com
+heenali.lakhani2024@gmail.com

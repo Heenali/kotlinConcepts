@@ -1,0 +1,36 @@
+--latest android-17 Sdk-37----------------------------
+
+--Background Audio Restrictions-Music and podcast apps must properly use Foreground Services.
+
+--Large-Screen Support is Mandatory- 
+Developers could force an Activity to stay in Portrait mode.now it  will ignore by the system
+
+---Android 17 now requires explicit permission for Wi-Fi/LAN network access.
+<uses-permission
+    android:name="android.permission.ACCESS_LOCAL_NETWORK"/>
+
+--Android 17 introduces stricter app memory limits to reduce:
+
+--Google announced Android is now moving toward a Compose-first ecosystem.-For new Android projects, Jetpack Compose is the preferred UI framework
+
+--Apps can no longer freely read OTP SMS messages.
+Google recommends:
+SMS Retriever API
+SMS User Consent API
+instead of directly reading SMS.
+
+--Certificate Transparency (CT) is now enabled automatically for apps targeting Android 17.-Better SSL/TLS security
+This helps detect:
+Fake certificates
+Fraudulent certificates
+Mis-issued certificates
+Man-in-the-Middle (MITM) attacks
+
+--Android's internal MessageQueue is now lock-free.
+Benefits:
+Better performance
+Faster app startup
+Fewer dropped frames
+Better multithreading performance
+
+

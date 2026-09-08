@@ -1,0 +1,57 @@
+Clean architecture
+
+ Presentation- Activity/Fragment  ,ViewModel            
+ Domain        - UseCases , Entities ,Repository Interface 
+ Data          -Repository Impl ,API ,Database  
+ 
+1. Presentation Layer---------------------------
+
+Responsibility:
+
+Display data to the user.
+Handle user interactions.
+Observe data from the ViewModel.
+
+Contains:
+
+Activity
+Fragment
+Jetpack Compose UI
+ViewModel
+
+
+2.Domain Layer--------------------------------
+
+The Domain layer is the core of the application.
+
+It contains:
+
+Business logic
+Use Cases
+Repository interfaces
+Entities
+
+It does not depend on Android, Retrofit, Room, or any framework.
+
+3.Data Layer-----------------------------
+
+The Data layer implements the repository interface and communicates with:
+
+REST API
+Room Database
+Firebase
+Cache
+
+
+Advantages
+Clear separation of responsibilities.
+Easier to test.
+Easier to maintain.
+Easier to replace data sources (e.g., switch from Retrofit to another networking library or from Room to another database).
+Scales well for large applications.
+
+
+
+marathahalli
+
+ 

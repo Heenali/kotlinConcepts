@@ -1,0 +1,235 @@
+Jetpack Compose
+------------------------------------
+it is not framwork but it is libarry supported for kotlin
+it is declarative base UI creation
+
+Imprative - Means how defile the steps to generate UI
+Declarative- means what you need to define? ==f(data)=UI
+
+@Composable fun use for composition
+
+Ex
+@Composable
+fun void test()
+{
+}                              
+
+java is hierarchy/inheritance base architecture
+all the views are inherited from view class
+jetpack is composistion over  inheritance
+
+recomposistion- when the any data changes found rerender the UI is called recomposistion-
+initial  composistion- fisrt time display the data is called initial composistion
+
+min sdk : 21 required for compose
+
+buildFeatures
+{
+	compose true
+}
+
+
+in existing project if you want to add compose using <composeibleview> 
+composeibleview.setcontext{
+call composistion fun
+}
+
+@preview()showBackground=true,heightDp=500,wightDp=300)
+@composable
+fun preview()
+{
+	Text(text="",)
+	fontsize=sp
+	otherwise =dp
+}
+
+------------------
+@Composable functions can be called multiple times. This is because whenever the UI state changes, Compose performs recomposition to update the screen.
+
+If you declare a normal variable inside a composable, it gets initialized again during every recomposition.
+
+Example (Incorrect):
+
+@Composable
+fun MyScreen() {
+    var text = ""
+
+    TextField(
+        value = text,
+        onValueChange = {
+            text = it
+        }
+    )
+}
+
+Problem:
+
+Every time you type a character, recomposition happens.
+The variable text is recreated and initialized with an empty string ("").
+As a result, the entered text is lost.
+Solution: Remember the State
+
+To preserve the value across recompositions, use remember with mutableStateOf().
+
+@Composable
+fun MyScreen() {
+
+    val state = remember {
+        mutableStateOf("")
+    }
+
+    TextField(
+        value = state.value,
+        onValueChange = {
+            state.value = it
+        }
+    )
+}
+How it works
+remember stores the state during recomposition.
+mutableStateOf("") creates an observable state.
+Whenever state.value changes, Compose automatically triggers recomposition.
+During recomposition, remember returns the previously stored value instead of creating a new one.
+
+--------------------------
+Jetpack Compose Layout Composables | Row, Column, Box |
+
+column = vertically aligment like listview
+Property=verticallyArrangemnet,horizontaliyAlignment
+
+row= horizontally alignment 
+property=horizontalyArrangment,verticallyaligment
+
+box= act as container,add multiple layout inside that
+
+
+-------------------------------
+Modifiers 
+
+- help to modify the look and feel
+ background color
+ clickable
+ size
+ padding
+-sequence of modifyer is most important
+
+modifier.modifer.size=
+-----------------------------------------
+
+listview=column
+recleyerview=lazyColumn
+
+---------------------
+Recomposition 
+
+recomposistion done by jetpack componet not required to manually
+when any state change recomposistion will call automaltically
+so make sure it composistion functine should not be more leangth / more code
+recomposistion call in any sequence so there should be no func inter connect with each otherr
+
+-------------------------
+state managemnet
+
+statefull composable-not sharing state
+stateless composible- sharing state mess hosting
+
+remember
+remembersavable
+
+state Hoisting  - means sharing single declarae state between multiple compsose fun
+Unidirectional flow:
+
+
+----------------------
+Side Effects
+
+what is sideeffect
+-composisble fun call multiple and no seqeunce define
+every composable fun should be sideeffect free
+- so avoid heave operion in compose fun 
+	ex- network call,db call
+
+
+sideeffect can be handle using luanchedEffcet()
+some time we required to call network call inside composable fun that to handle network call single time call so for that we write that network call inside
+lunchedeffect
+
+ex=
+lunchedEffect(key)
+{
+}
+
+key means on which condition we want to run above code
+
+--------------
+rememberCoroutineScope()
+
+if you wanto need to luanch coroutine on button click inside composable fun then time you can not write that using lunchedEffect its give error
+instade of instade of lunchedeffect you can use rememberCoroutineScope()
+
+rotation will destory all value and recall
+
+
+====
+RememberUpdatedState 
+
+
+store latest updated value
+if you perforing long task and value count before that but it display latest one
+
+-------------- produceState & derivedStateOf Examples
+
+produceState
+
+produceState is used when you want to convert asynchronous data (API calls, Flow, database data, etc.) into Compose State.
+
+It combines:
+
+remember
+mutableStateOf
+LaunchedEffect
+
+into a single API.
+
+When the API returns data:
+
+value changes
+Compose automatically triggers recomposition
+UI updates automatically
+
+derivedStateOf
+
+derivedStateOf is used to create calculated state from other states.
+
+It helps avoid unnecessary recompositions and improves performance.
+
+Use LaunchedEffect for automatic side effects.
+Use rememberCoroutineScope() for user-triggered events like button clicks.
+remember() survives recomposition but not Activity recreation.
+rememberSaveable() survives both recomposition and configuration changes such as screen rotation.
+
+
+
+
+
+Inheritance base 
+Imperative vs Declarative
+instali composistion and recomposistion
+how to use with old code
+what required to add
+row
+column
+box
+modifier
+sideeffect
+state management
+remember
+mutableStateOf
+remembersavable
+launcheffect
+remembercoroutinecope()
+producestate
+drivestateof
+	
+
+To maintain professionalism, I have already rescheduled the interview for tonight rather than postponing it to another day, even though I have some urgent matters to attend to at home.

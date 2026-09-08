@@ -1,0 +1,31 @@
+https://www.youtube.com/playlist?list=PLk7v1Z2rk4hgYY9Dus2h0DxUus0VX_igd
+
+IMP=
+Unit Test cases written in Unit Test folder
+Instrumental/Ui test cases written in Android test folder because it requires context/android/fragment class
+
+Unit-----------------
+@Runwith(Junit4::class)==add above class create for unit test case
+@Run== use above the fun of the test case
+assertThat(result).isEqualTo(true)== required oi implement google assert truth library
+separed libraries need to add for both unit test cases and instrument test cases
+
+
+Instrumental-----------
+@RunWith(AndroidUnit4::class)=add above class create for instrumental test case
+@Before- will call before every test cases- database open
+@After- will call after the every test cases- databse close
+using runblocking -get coroutine support in side test caesse
+
+Viewmodeltest
+-need to defile
+@before- instalize viewmodel
+@get:Rule - to excute the code syncronely
+
+
+Ui test
+- form add value and submit data
+@LargeTest=it means it test will fragment,activety,database and all... so it is add in above of @runwith fun
+
+
+
