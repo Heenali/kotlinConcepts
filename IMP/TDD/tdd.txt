@@ -1,3 +1,5 @@
+https://chatgpt.com/share/6aabc203-2f64-83ee-85a1-33a9e8b8aeff
+
 https://www.youtube.com/playlist?list=PLk7v1Z2rk4hgYY9Dus2h0DxUus0VX_igd
 
 IMP=
@@ -9,7 +11,10 @@ Unit-----------------
 @Run== use above the fun of the test case
 assertThat(result).isEqualTo(true)== required oi implement google assert truth library
 separed libraries need to add for both unit test cases and instrument test cases
-
+Frameworks
+JUnit 4 / JUnit 5
+Mockito
+MockK
 
 Instrumental-----------
 @RunWith(AndroidUnit4::class)=add above class create for instrumental test case
@@ -29,3 +34,6 @@ Ui test
 
 
 
+
+
+https://chatgpt.com/share/6aabb0f1-ab50-83ee-8397-3009019ddfeb
