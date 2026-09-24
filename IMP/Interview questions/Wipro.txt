@@ -1,0 +1,19 @@
+Wiro
+-----------------------------
+1st round coding 
+
+1.Intercepter token generate
+2.filter with json parsing
+
+2nd Round
+
+Kotlin advance questions
+Retrofit question
+system API and Application-level API
+Interceptor Type
+Room Migration type
+
+3rd round (not attended )
+
+Coding 
+1.API call display listing using latest architecture

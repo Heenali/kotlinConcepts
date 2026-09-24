@@ -1,0 +1,11 @@
+Cognizant - 1st round
+--------------------------
+MVVM + Clean architecture
+coroutine
+supervisor scope vs coroutine scope
+shared Flow vs state flow
+sealed class
+sealed class implementation with error and success handling
+compose state management
+Coroutine Handling in Jetpack Compose
+Coding/Optimization Round-Analyze an existing Compose screen and identify performance bottlenecks.

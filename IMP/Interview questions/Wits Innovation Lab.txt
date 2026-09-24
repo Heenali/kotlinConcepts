@@ -1,0 +1,10 @@
+Wits Innovation Lab
+
+Wits Innovation Lab - 1st round
+--------------------------------
+How to Improve Performance When Retrieving Data from Room Database?
+verify the code which point you will consider
+SSL Pinning
+coroutine dispatcher
+state flow vs shared flow
+Application leavel work question
